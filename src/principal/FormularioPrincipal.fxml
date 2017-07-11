@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.chart.LineChart?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="principal.ControladorFormularioPrincipal">
+	<center>
+		<AnchorPane prefHeight="600.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+			<children>
+				<Button fx:id="botonAutoActualizar" layoutX="26.0" layoutY="640.0" mnemonicParsing="false" text="Play Auto-Refresh" />
+				<Button fx:id="botonPararAutoActualizar" disable="true" layoutX="150.0" layoutY="640.0" mnemonicParsing="false" text="Stop Auto-Refresh" />
+				<TextField fx:id="textoBalanceTotal" alignment="CENTER_RIGHT" disable="true" layoutX="275.0" layoutY="26.0" prefHeight="30.0" prefWidth="148.0" promptText="0">
+					<font>
+						<Font name="System Bold" size="18.0" />
+					</font>
+				</TextField>
+
+				<!-- SECCIÓN DE COMPRA -->
+				<Label layoutX="664.0" layoutY="273.0" text="Available">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<Label fx:id="labelDisponibleCompra" alignment="CENTER_RIGHT" layoutX="719.0" layoutY="273.0" prefHeight="17.0" prefWidth="102.0" text="">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<Label fx:id="labelMonedaDisponibleCompra" layoutX="826.0" layoutY="273.0" text="BTC">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<Label layoutX="664.0" layoutY="303.0" text="Units">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<TextField fx:id="textoCantidadCompra" alignment="CENTER_RIGHT" layoutX="701.0" layoutY="303.0" prefHeight="25.0" prefWidth="120.0" promptText="0">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</TextField>
+				<Label fx:id="labelMonedaCantidadCompra" layoutX="826.0" layoutY="303.0" text="EGC">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<Label layoutX="664.0" layoutY="333.0" text="Price">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<TextField fx:id="textoPrecioCompra" alignment="CENTER_RIGHT" layoutX="701.0" layoutY="333.0" prefHeight="25.0" prefWidth="120.0" promptText="0">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</TextField>
+				<Label fx:id="labelMonedaPrecioCompra" layoutX="826.0" layoutY="333.0" text="BTC">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<Label layoutX="664.0" layoutY="363.0" text="Total">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<TextField fx:id="textoTotalCompra" alignment="CENTER_RIGHT" disable="true" layoutX="701.0" layoutY="363.0" prefHeight="25.0" prefWidth="120.0" promptText="0">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</TextField>
+				<Label fx:id="labelMonedaTotalCompra" layoutX="826.0" layoutY="363.0" text="BTC">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<Button fx:id="botonBidCompra" layoutX="664.0" layoutY="393.0" mnemonicParsing="false" text="Bid" />
+				<Button fx:id="botonAskCompra" layoutX="703.0" layoutY="393.0" mnemonicParsing="false" text="Ask" />
+				<Button fx:id="botonLastCompra" layoutX="744.0" layoutY="393.0" mnemonicParsing="false" text="Last" />
+				<Button fx:id="botonMaxCompra" layoutX="814.0" layoutY="393.0" mnemonicParsing="false" text="Max" />
+				<Button fx:id="botonComprar" layoutX="664.0" layoutY="423.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="190.0" text="Buy">
+					<font>
+						<Font name="System Bold" size="14.0" />
+					</font>
+				</Button>
+
+				<!-- SECCIÓN DE VENTA -->
+				<Label layoutX="870.0" layoutY="273.0" text="Available">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<Label fx:id="labelDisponibleVenta" alignment="CENTER_RIGHT" layoutX="925.0" layoutY="273.0" prefHeight="17.0" prefWidth="101.0" text="">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<Label fx:id="labelMonedaDisponibleVenta" layoutX="1032.0" layoutY="273.0" text="EGC">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<Label layoutX="870.0" layoutY="303.0" text="Units">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<TextField fx:id="textoCantidadVenta" alignment="CENTER_RIGHT" layoutX="907.0" layoutY="303.0" prefHeight="25.0" prefWidth="119.0" promptText="0">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</TextField>
+				<Label fx:id="labelMonedaCantidadVenta" layoutX="1032.0" layoutY="303.0" text="EGC">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<Label layoutX="870.0" layoutY="333.0" text="Price">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<TextField fx:id="textoPrecioVenta" alignment="CENTER_RIGHT" layoutX="907.0" layoutY="333.0" prefHeight="25.0" prefWidth="118.0" promptText="0">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</TextField>
+				<Label fx:id="labelMonedaPrecioVenta" layoutX="1032.0" layoutY="333.0" text="BTC">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<Label layoutX="870.0" layoutY="363.0" text="Total">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<TextField fx:id="textoTotalVenta" alignment="CENTER_RIGHT" disable="true" layoutX="908.0" layoutY="363.0" prefHeight="25.0" prefWidth="117.0" promptText="0">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</TextField>
+				<Label fx:id="labelMonedaTotalVenta" layoutX="1032.0" layoutY="363.0" text="BTC">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<Button fx:id="botonBidVenta" layoutX="870.0" layoutY="393.0" mnemonicParsing="false" text="Bid" />
+				<Button fx:id="botonAskVenta" layoutX="909.0" layoutY="393.0" mnemonicParsing="false" text="Ask" />
+				<Button fx:id="botonLastVenta" layoutX="950.0" layoutY="393.0" mnemonicParsing="false" text="Last" />
+				<Button fx:id="botonMaxVenta" layoutX="1020.0" layoutY="393.0" mnemonicParsing="false" text="Max" />
+				<Button fx:id="botonVender" layoutX="870.0" layoutY="423.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="190.0" text="Sell">
+					<font>
+						<Font name="System Bold" size="14.0" />
+					</font>
+				</Button>
+
+				<TableView fx:id="tablaCarteras" layoutX="26.0" layoutY="86.0" prefHeight="250.0" prefWidth="625.0">
+				</TableView>
+				<TableView fx:id="tablaMercados" layoutX="26.0" layoutY="370.0" prefHeight="250.0" prefWidth="625.0">
+				</TableView>
+				<TableView fx:id="tablaOrdenesCompra" layoutX="660.0" layoutY="485.0" prefHeight="135.0" prefWidth="195.0">
+				</TableView>
+				<TableView fx:id="tablaOrdenesVenta" layoutX="866.0" layoutY="485.0" prefHeight="135.0" prefWidth="195.0">
+				</TableView>
+				<TableView fx:id="tablaHistorialMercado" layoutX="1070.0" layoutY="485.0" prefHeight="135.0" prefWidth="250.0">
+				</TableView>
+				<TableView fx:id="tablaMisOrdenesAbiertas" layoutX="1070.0" layoutY="51.0" prefHeight="155.0" prefWidth="250.0">
+				</TableView>
+				<Button fx:id="botonCancelarOrden" layoutX="1130.0" layoutY="210.0" mnemonicParsing="false" prefWidth="125" text="Cancel Order">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Button>
+				<TableView fx:id="tablaMiHistorial" layoutX="1070.0" layoutY="270.0" prefHeight="183.0" prefWidth="250.0">
+				</TableView>
+
+				<Label layoutX="152.0" layoutY="32.0" text="Total Balance:">
+					<font>
+						<Font name="System Bold" size="18.0" />
+					</font>
+				</Label>
+				<Label layoutX="426.0" layoutY="32.0" text="BTC">
+					<font>
+						<Font name="System Bold" size="18.0" />
+					</font>
+				</Label>
+				<Label layoutX="26.0" layoutY="62.0" text="Wallets">
+					<font>
+						<Font name="System Bold" size="18.0" />
+					</font>
+				</Label>
+				<Label layoutX="664.0" layoutY="245.0" text="Buy">
+					<font>
+						<Font name="System Bold" size="18.0" />
+					</font>
+				</Label>
+				<Label layoutX="870.0" layoutY="245.0" text="Sell">
+					<font>
+						<Font name="System Bold" size="18.0" />
+					</font>
+				</Label>
+				<Label layoutX="1074.0" layoutY="26.0" text="My Open Orders">
+					<font>
+						<Font name="System Bold" size="18.0" />
+					</font>
+				</Label>
+				<Label layoutX="1070.0" layoutY="245.0" text="My Order History">
+					<font>
+						<Font name="System Bold" size="18.0" />
+					</font>
+				</Label>
+				<Label layoutX="26.0" layoutY="346.0" text="Markets">
+					<font>
+						<Font name="System Bold" size="18.0" />
+					</font>
+				</Label>
+				<Label layoutX="660.0" layoutY="458.0" text="Bid">
+					<font>
+						<Font name="System Bold" size="18.0" />
+					</font>
+				</Label>
+				<Label layoutX="866.0" layoutY="458.0" text="Ask">
+					<font>
+						<Font name="System Bold" size="18.0" />
+					</font>
+				</Label>
+				<Label layoutX="1066.0" layoutY="458.0" text="Market History">
+					<font>
+						<Font name="System Bold" size="18.0" />
+					</font>
+				</Label>
+				<LineChart fx:id="graficoMercado" alternativeColumnFillVisible="true" layoutX="652.0" layoutY="16.0" prefHeight="234.0" prefWidth="421.0">
+					<xAxis>
+						<CategoryAxis side="BOTTOM" fx:id="xAxis" />
+					</xAxis>
+					<yAxis>
+						<NumberAxis fx:id="yAxis" side="LEFT" />
+					</yAxis>
+				</LineChart>
+				<MenuBar>
+					<menus>
+						<Menu mnemonicParsing="false" text="File">
+							<items>
+								<MenuItem fx:id="menuClose" mnemonicParsing="false" text="Close" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="Preferences">
+							<items>
+								<MenuItem fx:id="menuCredentialsBittrex" mnemonicParsing="false" text="Credentials Bittrex" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="Help">
+							<items>
+								<MenuItem fx:id="menuAbout" mnemonicParsing="false" text="About" />
+							</items>
+						</Menu>
+					</menus>
+				</MenuBar>
+            <Label layoutX="285.0" layoutY="643.0" text="Do you like the Cryptocurrency Tracker Project? Do it better, support the project! -> " textFill="#e1e424">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <TextField layoutX="956.0" layoutY="643.0" prefHeight="15.0" prefWidth="320.0" text="BTC: 1PdARofmtPw123LW4vDLJFr92NXKPW9WCu" editable="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="956.0" layoutY="670.0" prefHeight="15.0" prefWidth="320.0" text="EGC: EZbHuqC13SZPrzUaT7aTZ7nnUgr9tZS215" editable="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="285.0" layoutY="670.0" prefHeight="15.0" prefWidth="330.0" text="ETC: 0x74b8d41223ec7f659e40411de1cb5cd5d4285ab6" editable="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="620.0" layoutY="670.0" prefHeight="15.0" prefWidth="330.0" text="ETH: 0x7b4bf7ade5434bd2357e153d8a1eecd606ab02ff" editable="false">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+			</children>
+		</AnchorPane>
+	</center>
+	<!-- <top> -->
+	<!-- <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" 
+		/> -->
+	<!-- </top> -->
+	<!-- <left> -->
+	<!-- <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" 
+		/> -->
+	<!-- </left> -->
+	<!-- <right> -->
+	<!-- <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" 
+		/> -->
+	<!-- </right> -->
+	<!-- <bottom> -->
+	<!-- <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" 
+		/> -->
+	<!-- </bottom> -->
+</BorderPane>

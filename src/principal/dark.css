@@ -1,0 +1,56 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+/* Dark Theme */
+.root{
+    -fx-font-size: 9pt;
+    -fx-font-family: "Arial";
+    -fx-text-fill: rgb(255,255,255);
+    -fx-base: rgb(0, 200, 0);
+    -fx-background: rgb(0, 0, 0);
+}
+
+/* .chart {
+    -fx-padding: 10px;
+    -fx-background-image: url("icon.png");   
+}
+.chart-content {
+    -fx-padding: 30px;    
+}*/
+ 
+.chart-title {
+  -fx-text-fill: #00ff00;
+  -fx-font-size: 1.6em;
+}
+ 
+.axis-label {
+  -fx-text-fill: #00ff00;
+}
+ 
+.chart-legend {
+   -fx-background-color:  transparent;
+   -fx-padding: 20px;
+}
+ 
+.chart-legend-item-symbol{
+   -fx-background-radius: 0;
+}
+ 
+.chart-legend-item{
+    -fx-text-fill: #00ff00;
+}
+ 
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+.chart-vertical-grid-lines {
+    -fx-stroke: transparent;
+}
+.chart-horizontal-grid-lines {
+    -fx-stroke: #ffffff;
+}
+/* .chart-alternative-row-fill {
+    -fx-fill: #99bcfd;
+    -fx-stroke: transparent;
+    -fx-stroke-width: 0;
+}*/
+
